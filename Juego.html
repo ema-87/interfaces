@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="logo">
+                <img src="../img/logotp.jpg" alt="Gaming Store Logo" class="logo-image">
+            </div>
+            
+            <div class="contenedor-busqueda">
+                <input type="text" placeholder="Buscar" class="entrada-busqueda">
+                <i class="fas fa-search icono-busqueda"></i>
+            </div>
+            
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <!-- Menú hamburguesa desplegable -->
+            <div class="menu-dropdown" id="menu-dropdown">
+                <div class="menu-overlay" id="menu-overlay"></div>
+                <div class="menu-panel">
+                    <div class="menu-header">
+                        <button class="menu-close" id="menu-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="menu-content">
+                        <ul class="menu-options">
+                            <li class="menu-option">
+                                <span>Perfil</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Configuracion</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Notificaciones</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Redes</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Soporte</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Creditos</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Terminos de servicio</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option">
+                                <span>Politica de privacidad</span>
+                            </li>
+                            
+                            <li class="menu-separator"></li>
+                            
+                            <li class="menu-option menu-logout">
+                                <span>Cerrar sesion</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <main class="main-content game-content">
+                <div class="breadcrumbs">
+                    <p>Juegos > Rompecabezas > BLOCKA</p>
+                </div>
+
+                <div class="espacioJuego">
+                    <!-- Juego BLOCKA -->
+            <div class="blocka-container">
+                <!-- Header del juego -->
+                <div class="blocka-header">
+                    <div class="blocka-info">
+                        <h2>BLOCKA</h2>
+                        <div class="blocka-level">Nivel: <span id="current-level">1</span></div>
+                    </div>
+                    <div class="blocka-controls">
+                        <div class="blocka-timer">
+                            <i class="fas fa-clock"></i>
+                            <span id="timer">0:00</span>
+                        </div>
+                        <div class="blocka-actions">
+                            <button id="start-btn" class="blocka-btn primary">
+                                <i class="fas fa-play"></i> Comenzar
+                            </button>
+                            <button id="restart-btn" class="blocka-btn secondary" style="display: none;">
+                                <i class="fas fa-redo"></i> Reiniciar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área del juego -->
+                <div class="blocka-game-area">
+                    <!-- Pantalla de inicio -->
+                    <div id="start-screen" class="blocka-start-screen">
+                        <div class="blocka-welcome">
+                            <i class="fas fa-puzzle-piece blocka-icon"></i>
+                            <h3>¡Bienvenido a BLOCKA!</h3>
+                            <p>Rota las piezas hasta formar la imagen completa</p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Tablero del juego -->
+                    <div id="game-board" class="blocka-game-board" style="display: none;">
+                        <div class="blocka-puzzle-container">
+                            <div id="puzzle-grid" class="puzzle-grid">
+                                <!-- Las piezas se generan dinámicamente -->
+                            </div>
+                        </div>
+                        
+                        <!-- Imagen de referencia (opcional) -->
+                        <div class="blocka-reference">
+                            <div class="reference-toggle">
+                                <input type="checkbox" id="show-reference">
+                                <label for="show-reference">Mostrar referencia</label>
+                            </div>
+                            <div id="reference-image" class="reference-image" style="display: none;">
+                                <img id="reference-img" src="" alt="Imagen de referencia">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pantalla de éxito -->
+                    <div id="success-screen" class="blocka-success-screen" style="display: none;">
+                        <div class="success-content">
+                            <i class="fas fa-trophy success-icon"></i>
+                            <h3>¡Nivel Completado!</h3>
+                            <div class="success-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Tiempo:</span>
+                                    <span class="stat-value" id="final-time">0:00</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Nivel:</span>
+                                    <span class="stat-value" id="final-level">1</span>
+                                </div>
+                            </div>
+                            <div class="success-actions">
+                                <button id="menu-btn" class="blocka-btn secondary">
+                                    <i class="fas fa-home"></i> Menú Principal
+                                </button>
+                                <button id="next-level-btn" class="blocka-btn primary">
+                                    <i class="fas fa-arrow-right"></i> Siguiente Nivel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div class="blocka-progress">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-pieces">0</span> / <span id="total-pieces">4</span> piezas correctas
+                    </div>
+                </div>
+            </div>
+                </div>
+
+                <div class="ayuda">
+            <div class="instrucciones">
+                <h2>¿Cómo jugar BLOCKA?</h2>
+                <hr>
+                <p>BLOCKA es un rompecabezas donde debes rotar las piezas de una imagen hasta formar la imagen completa. 
+                La imagen está dividida en partes que han sido rotadas aleatoriamente. 
+                Cada nivel aumenta la dificultad con diferentes filtros aplicados a la imagen.</p>
+            </div>
+            <div class="controles">
+                <h2>Controles</h2>
+                <div class="control-item">
+                    <i class="fas fa-play control-icon"></i>
+                    <p>Haz clic en "Comenzar" para iniciar el nivel y activar el temporizador.</p>
+                </div>
+                <hr>
+                <div class="control-item">
+                    <i class="fas fa-mouse-pointer control-icon"></i>
+                    <p>Clic izquierdo en una pieza: rota hacia la izquierda (90° antihorario).</p>
+                </div>
+                <hr>
+                <div class="control-item">
+                    <i class="fas fa-mouse control-icon"></i>
+                    <p>Clic derecho en una pieza: rota hacia la derecha (90° horario).</p>
+                </div>
+            </div>
+                </div>
+                
+                <div class="imagenes">
+            <div class="imagen-blocka">
+                <h3>Diferentes Niveles</h3>
+                <div class="nivel-examples">
+                    <div class="nivel-example">
+                        <div class="nivel-title">Nivel 1 - Escala de Grises</div>
+                        <div class="ejemplo-grid grayscale">
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                        </div>
+                    </div>
+                    <div class="nivel-example">
+                        <div class="nivel-title">Nivel 2 - Brillo</div>
+                        <div class="ejemplo-grid brightness">
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                            <div class="ejemplo-piece"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="imagen-blocka">
+                <h3>Mecánica de Rotación</h3>
+                <div class="rotation-demo">
+                    <div class="demo-piece">
+                        <div class="piece-demo original"></div>
+                        <div class="rotation-arrows">
+                            <i class="fas fa-undo rotation-left"></i>
+                            <i class="fas fa-redo rotation-right"></i>
+                        </div>
+                        <div class="piece-demo rotated"></div>
+                    </div>
+                    <p>Clic izquierdo/derecho para rotar las piezas</p>
+                </div>
+            </div>
+                </div>
+
+                <div class="container-lateral">
+            <div class="comunidad">
+                <div class="comentar">
+                    <img src="img/usuario.png" alt="usuario">
+                    <div class="inputComentar">
+                        <p>Agrega un comentario...</p>
+                    </div>
+                    <img src="img/subir comentario.png" alt="boton comentar">
+                </div>
+                <div class="comentarios">
+                    <div class="comentario">
+                        <img src="img/usuario.png" alt="usuario">
+                        <div class="contenido-comentario">
+                            <h2>SpearMaster84</h2>
+                            <p>Divertido ver a Magikarp saltando de un lugar a otro, aunque se vuelve un poco repetitivo.</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <img src="img/usuario.png" alt="usuario">
+                        <div class="contenido-comentario">
+                            <h2>Knight210</h2>
+                            <p>Es un juego sencillo, pero entretiene lo suficiente para pasar unos minutos relajado con Magikarp.</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <img src="img/usuario.png" alt="usuario">
+                        <div class="contenido-comentario">
+                            <h2>TheKimball</h2>
+                            <div class="texto-comentario">
+                                <p>El Peg Solitaire de Magikarp no ofrece ningún valor significativo más allá de un desafío mecánico mínimo. La estética de los peces es irrelevante y no...</p>
+                                <span class="leerMas">Leer más</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recomendados">
+                <h2>Recomendados</h2>
+                <div class="card">
+                    <img src="img/recomendado.png" alt="juego recomendado">
+                </div>
+                <div class="card">
+                    <img src="img/recomendado.png" alt="juego recomendado">
+                </div>
+                <div class="card">
+                    <img src="img/recomendado.png" alt="juego recomendado">
+                </div>
+                    </div>
+            </main>
+        </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Acerca de nosotros</h4>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Redes</h4>
+                <ul>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">emasadi280@gmail.com</a></li>
+                    <li><a href="#">tiagod@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Comunidad</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Foro</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Privacidad</h4>
+                <ul>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Errores frecuentes</a></li>
+                    <li><a href="#">No encuentro un juego</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/javaScript.js"></script>
+    </body>
+</html>

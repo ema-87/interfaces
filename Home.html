@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="pantalla-carga" class="pantalla-carga">
+        <div class="carga-container">
+            <div class="carga-logo">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="carga-spinner"></div>
+            <div class="carga-texto">
+                <h2>Gaming Store</h2>
+                <p>Cargando Pagina...</p>
+            </div>
+            <div class="contenedor-progreso">
+                <div class="barra-progreso">
+                    <div class="relleno-progreso" id="relleno-progreso"></div>
+                </div>
+                <div class="porcentaje-progreso" id="porcentaje-progreso">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        
+        <div class="logo">
+          <img src="../img/logotp.jpg" alt="Gaming Store Logo" class="logo-image">
+        </div>
+        
+        <div class="contenedor-busqueda">
+            <input type="text" placeholder="Buscar" class="entrada-busqueda">
+            <i class="fas fa-search icono-busqueda"></i>
+        </div>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <div class="menu-dropdown" id="menu-dropdown">
+            <div class="menu-overlay" id="menu-overlay"></div>
+            <div class="menu-panel">
+                <div class="menu-header">
+                    <button class="menu-close" id="menu-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="menu-content">
+                    <ul class="menu-options">
+                        <li class="menu-option">
+                            <span>Perfil</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Configuracion</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Notificaciones</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Redes</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Soporte</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Creditos</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Terminos de servicio</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option">
+                            <span>Politica de privacidad</span>
+                        </li>
+                        
+                        <li class="menu-separator"></li>
+                        
+                        <li class="menu-option menu-logout">
+                            <span>Cerrar sesion</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="nav-bar" id="nav-bar">
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Recientes</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Tendencias</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Sugerencias</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-star"></i>
+                        <span>Nuevos</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Aventura</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-car"></i>
+                        <span>Autos</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>Battle Royale</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-futbol"></i>
+                        <span>Deportes</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-ghost"></i>
+                        <span>Terror</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Guerra</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Cooperativos</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">Novedades</h2>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-imagen">
+                            <a href="juego.html">
+                                <img src="img\uncharted 4.jpg" alt="Uncharted 4">
+                                <div class="boton-play">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>UNCHARTED 4</h3>
+                        <p>Aventura</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-imagen">
+                            <a href="juego.html">
+                                <img src="img\uncharted 4.jpg" alt="Uncharted 4">
+                                <div class="boton-play">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>UNCHARTED 4</h3>
+                        <p>Aventura</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-imagen">
+                            <a href="juego.html">
+                                <img src="img\uncharted 4.jpg" alt="Uncharted 4">
+                                <div class="boton-play">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>UNCHARTED 4</h3>
+                        <p>Aventura</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-imagen">
+                            <a href="juego.html">
+                                <img src="img\uncharted 4.jpg" alt="Uncharted 4">
+                                <div class="boton-play">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>UNCHARTED 4</h3>
+                        <p>Aventura</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-imagen">
+                            <a href="juego.html">
+                                <img src="img\uncharted 4.jpg" alt="Uncharted 4">
+                                <div class="boton-play">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>UNCHARTED 4</h3>
+                        <p>Aventura</p>
+                    </div>
+                </div>
+                <button class="flecha-scroll scroll-izquierda">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="flecha-scroll scroll-derecha">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Juegos para ti</h2>
+                <div class="games-grid horizontal">
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="flecha-scroll scroll-izquierda">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="flecha-scroll scroll-derecha">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tendencias</h2>
+                <div class="games-grid horizontal">
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card-horizontal">
+                        <div class="game-imagen">
+                            <img src="img/fifa15.jpg" alt="FIFA 15">
+                            <div class="boton-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="flecha-scroll scroll-izquierda">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="flecha-scroll scroll-derecha">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </section>
+        </main>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Acerca de nosotros</h4>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Redes</h4>
+                <ul>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">emasadi280@gmail.com</a></li>
+                    <li><a href="#">tiagod@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Comunidad</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Foro</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Privacidad</h4>
+                <ul>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Errores frecuentes</a></li>
+                    <li><a href="#">No encuentro un juego</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/javaScript.js"></script>
+</body>
+</html>
+
+

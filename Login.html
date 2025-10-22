@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión - Gaming Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="register-main">
+        <section class="register-container login-container">
+            <h1 class="register-titulo">Inicia sesión</h1>
+            <form class="register-form" id="login-form" autocomplete="off">
+                <div class="register-input-grupo">
+                    <label for="email-telefono" class="register-input-label">Email o teléfono <span class="register-required">*</span></label>
+                    <input type="text" id="email-telefono" name="email-telefono" required class="register-input">
+                </div>
+                <div class="register-input-grupo register-password-grupo">
+                    <label for="password" class="register-input-label">Contraseña <span class="register-required">*</span></label>
+                    <input type="password" id="password" name="password" required class="register-input register-password-input">
+                    <button type="button" class="register-toggle-password" aria-label="Mostrar/ocultar contraseña">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <div class="login-olvide-password">
+                    <a href="#" class="login-olvide-link">Olvidé mi contraseña</a>
+                </div>
+                <button type="submit" class="register-submit-btn">Iniciar Sesión</button>
+            </form>
+            <div class="register-social">
+                <span class="register-social-text">Iniciar con</span>
+                <div class="register-social-icons">
+                    <a href="#" class="register-social-btn register-google" aria-label="Google"><img src="../img/google.png" alt="Google" class="register-social-logo"></a>
+                    <a href="#" class="register-social-btn register-facebook" aria-label="Facebook"><img src="../img/facebook.webp" alt="Facebook" class="register-social-logo"></a>
+                </div>
+            </div>
+            <div class="register-login-link">
+                ¿No tiene cuenta? <a href="Register.html" class="register-login-link-text">Crear cuenta</a>
+            </div>
+        </section>
+    </main>
+    <script src="../js/javaScript.js"></script>
+</body>
+</html>
