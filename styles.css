@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 24px 40px;
+  border-left: 8px solid #111218; /* borde izquierdo oscuro como en la imagen */
+  background: #fff;
+  color: #111;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+div.actions {
+  margin: 16px 0;
+}
+
+div.actions a + a { margin-left: 8px; }
+
+h2 {
+  font-size: 28px;
+  margin-top: 28px;
+}
+
+ul {
+  margin-top: 12px;
+  line-height: 1.8;
+} 
